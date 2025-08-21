@@ -15,3 +15,27 @@ background-color: rgb(119, 28, 184);
     background-color: green;
     color:darkgreen;
 }
+footer {
+    background-color: #ff00ea;
+    color: #fff8ec;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  footer a {
+    color: #00ff88;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin: 0 0.5rem; 
+    font-size: 1.8rem; 
+    display: inline-block; 
+  }
+  
+  footer a:hover {
+    color: rgb(0, 38, 255);
+  }
+  header{
+    background-image: url("./momo.jpg");
+    
+  }
