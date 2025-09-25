@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Verificador de Edad</title>
+</head>
+<body>
+
+    <h1>Verifica tu edad para continuar</h1>
+    
+    <button onclick="verificarEdad()">Verificar edad</button>
+
+    <script>
+        // 1. Se define una función que contiene las instrucciones.
+        function verificarEdad() {
+            
+            // 2. Se pide la edad al usuario y se guarda como texto.
+            var edadTexto = prompt("Por favor, ingresa tu edad:");
+            
+            // 3. Se convierte el texto a un número.
+            var edadNumero = parseInt(edadTexto);
+
+            // 4. Se usan condicionales para tomar una decisión.
+            // Primero, revisamos si lo que se escribió NO es un número.
+            if (isNaN(edadNumero)) {
+                alert("Error. Debes ingresar un número.");
+            }
+            // Si es un número, revisamos si es mayor o igual a 18.
+            else if (edadNumero >= 18) {
+                alert("¡Acceso permitido! Eres mayor de edad. 👍");
+            } 
+            // Si no es ninguna de las anteriores, es porque es menor de 18.
+            else {
+                alert("Acceso denegado. Eres menor de edad. ⛔");
+            }
+        }
+    </script>
+
+</body>
+</html>

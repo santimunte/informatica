@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calcular Promedio</title>
+</head>
+<body>
+
+  <h1>Calculadora de Promedio</h1>
+  <button onclick="calcularPromedio()">Calcular promedio</button>
+
+  <script>
+    function calcularPromedio() {
+      nota1 = prompt("Ingrese la primera nota:");
+      nota2 = prompt("Ingrese la segunda nota:");
+      nota3 = prompt("Ingrese la tercera nota:");
+
+      nota1 = Number(nota1);
+      nota2 = Number(nota2);
+      nota3 = Number(nota3);
+
+      promedio = (nota1 + nota2 + nota3) / 3;
+
+      if (promedio >= 6) {
+        alert("Aprobado. Tu promedio es: " + promedio.toFixed(2));
+      } else {
+        alert("Desaprobado. Tu promedio es: " + promedio.toFixed(2));
+      }
+    }
+  </script>
+
+</body>
+</html>
