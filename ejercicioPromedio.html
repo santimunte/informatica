@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2: Calculadora de Promedio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(to right, #6dd5ed, #2193b0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            width: 100%;
+            max-width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box; /* Importante para que el padding no afecte el ancho */
+            font-size: 16px;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            background-color: #ff7e5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #feb47b;
+        }
+
+        #resultado {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculator">
+        <h2> Calculadora de Promedio</h2>
+        <div class="input-group">
+            <label for="nota1">Nota 1:</label>
+            <input type="number" id="nota1" placeholder="Ej: 7">
+        </div>
+        <div class="input-group">
+            <label for="nota2">Nota 2:</label>
+            <input type="number" id="nota2" placeholder="Ej: 8">
+        </div>
+        <div class="input-group">
+            <label for="nota3">Nota 3:</label>
+            <input type="number" id="nota3" placeholder="Ej: 9">
+        </div>
+        <button onclick="calcularPromedio()">Calcular Promedio</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function calcularPromedio() {
+            let nota1 = parseFloat(document.getElementById('nota1').value) || 0;
+            let nota2 = parseFloat(document.getElementById('nota2').value) || 0;
+            let nota3 = parseFloat(document.getElementById('nota3').value) || 0;
+            let resultadoElemento = document.getElementById('resultado');
+
+            let promedio = (nota1 + nota2 + nota3) / 3;
+            let promedioRedondeado = promedio.toFixed(2);
+
+            if (promedio >= 6) {
+                resultadoElemento.innerHTML = `Tu promedio es <strong style="color: green;">${promedioRedondeado}</strong>. ¡Aprobaste!`;
+            } else {
+                resultadoElemento.innerHTML = `Tu promedio es <strong style="color: red;">${promedioRedondeado}</strong>. Necesitás repasar.`;
+            }
+        }
+    </script>
+
+</body>
+</html>
