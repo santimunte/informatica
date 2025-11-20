@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Adivina el Número</title>
+</head>
+<body>
+
+    <h1>Juego de Adivinanza</h1>
+    <p>Tienes que adivinar el número secreto.</p>
+    <button onclick="jugar()">Jugar</button>
+
+    <script>
+        secreto = 10; 
+
+        function jugar() {
+    
+            intentoTexto = prompt("¿Cuál crees que es el número?");
+        
+            intentoNumero = parseInt(intentoTexto);
+
+            if (intentoNumero === secreto) {
+                alert("¡Felicidades! ¡Acertaste!");
+            } else {
+                alert("No. Intenta de nuevo.");
+            }
+        }
+    </script>
+
+</body>
+</html>

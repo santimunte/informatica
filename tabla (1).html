@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Colores</title>
+</head>
+<body>
+
+    <h1>Cambia los colores</h1>
+    <button onclick="setModo('dia')">Modo Día (Blanco)</button>
+    <button onclick="setModo('noche')">Modo Noche (Oscuro)</button>
+    <button onclick="setModo('loco')">Modo Loco (Verde)</button>
+
+    <script>
+        function setModo(modo) {
+            const body = document.body;
+
+            if (modo === 'dia') {
+                body.style.backgroundColor = '#FFFFFF'; 
+                body.style.color = '#000000'; 
+            } else if (modo === 'noche') {
+                body.style.backgroundColor = '#333333'; 
+                body.style.color = '#FFFFFF'; 
+            } else if (modo === 'loco') {
+                body.style.backgroundColor = '#00FF00'; 
+                body.style.color = '#FF00FF'; 
+            }
+        }
+    </script>
+
+</body>
+</html>

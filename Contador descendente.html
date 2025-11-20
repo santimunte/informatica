@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador</title>
+</head>
+<body>
+
+    <h2>Contador: <span id="display">10</span></h2>
+    <button onclick="bajar()">Bajar 1</button>
+
+    <script>
+        let contador = 10;
+        const display = document.getElementById('display');
+
+        function bajar() {
+            
+            if (contador > 0) {
+                contador = contador - 1; 
+                display.innerText = contador;
+            } else {
+                alert("¡Ya está en cero!");
+            }
+        }
+    </script>
+
+</body>
+</html>

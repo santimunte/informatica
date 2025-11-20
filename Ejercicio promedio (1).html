@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ejercicio 2: Promedio</title>
+    <style>
+        
+        body { font-family: sans-serif; background: linear-gradient(135deg, #74ebd5, #ACB6E5); display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        form { background: white; padding: 25px 30px; border-radius: 8px; width: 350px; text-align: left; }
+        h1 { text-align: center; color: #333; margin-bottom: 20px; }
+        label { display: block; font-weight: bold; margin: 10px 0 5px; color: #444; }
+        input[type="number"] { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box; }
+        button { width: 100%; padding: 12px; background: linear-gradient(135deg, #43e97b, #38f9d7); border: none; border-radius: 8px; color: white; font-size: 16px; font-weight: bold; cursor: pointer; margin-top: 15px; }
+        button:hover { background: linear-gradient(135deg, #38f9d7, #43e97b); }
+        #msg { margin-top: 15px; padding: 10px; border-radius: 6px; font-weight: bold; text-align: center; }
+    </style>
+</head>
+<body>
+
+    <form>
+        <h1>Promedio de Notas</h1>
+        
+        <label for="n1">Nota 1:</label>
+        <input type="number" id="n1" required>
+        
+        <label for="n2">Nota 2:</label>
+        <input type="number" id="n2" required>
+        
+        <label for="n3">Nota 3:</label>
+        <input type="number" id="n3" required>
+        
+        <button type="button" onclick="calcular()">Calcular Promedio</button>
+
+        <div id="msg"></div>
+    </form>
+    
+    <script>
+        function calcular() {
+        
+            const v1 = document.getElementById('n1').value;
+            const v2 = document.getElementById('n2').value;
+            const v3 = document.getElementById('n3').value;
+            const msg = document.getElementById('msg');
+            
+           
+            msg.textContent = '';
+            msg.style.backgroundColor = 'transparent';
+            msg.style.color = '#333';
+            
+            
+            if (v1 === '' || v2 === '' || v3 === '') {
+                msg.textContent = 'ERROR: Ingresa las 3 notas.';
+                msg.style.color = 'red';
+                return;
+            }
+
+            
+            const n1 = Number(v1);
+            const n2 = Number(v2);
+            const n3 = Number(v3);
+            const promedio = (n1 + n2 + n3) / 3;
+
+            let mensaje;
+            let colorFondo; 
+            let colorTexto; 
+            
+            if (promedio >= 7) {
+                mensaje = `Tu promedio es ${promedio}. ¡Aprobaste!`;
+                colorFondo = '#e6ffec'; 
+                colorTexto = '#28a745'; 
+            } else {
+                mensaje = `Tu promedio es ${promedio}. Necesitás repasar.`;
+                colorFondo = '#ffe6e6'; 
+                colorTexto = '#dc3545'; 
+            }
+            
+           
+            msg.textContent = mensaje;
+            msg.style.backgroundColor = colorFondo;
+            msg.style.color = colorTexto;
+        }
+    </script>
+</body>
+</html>
